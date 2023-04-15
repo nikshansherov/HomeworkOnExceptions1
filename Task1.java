@@ -1,13 +1,14 @@
 public class Task1 {
     public static void main(String[] args) {
-        System.out.println(arifmeticExepsion(15, 2));
+        System.out.println(arifmeticExepsion(15, 0));
 
         int[] arr = null;
+//        int[] arr = {1, 2, 3};
         nullPointerException(arr);
 
         int[] arr2 = {1, 2, 3};
         int num = 5;
-        System.out.println(arrayIndexOutOfBoundsException(num, arr2));
+        arrayIndexOutOfBoundsException(num, arr2);
     }
 
     public static int arifmeticExepsion(int number1, int number2) {
@@ -18,13 +19,15 @@ public class Task1 {
     public static void nullPointerException(int[] arr) {
         if (arr == null) throw new NullPointerException("Ошибка - несуществующий массив!");
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
+            System.out.print(arr[i] + " ");
         }
     }
 
-    public static int arrayIndexOutOfBoundsException(int num, int[] arr) {
-        if (num > arr.length || num < 0) throw new ArrayIndexOutOfBoundsException("Ошибка - " +
-                "обращение к несуществующему индексу массива!");
-        return num;
+    public static void arrayIndexOutOfBoundsException(int num, int[] arr) {
+        if (num > arr.length || num < 0) throw new ArrayIndexOutOfBoundsException("Ошибка! - Индекс " + num +
+                " находится вне массива!");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
